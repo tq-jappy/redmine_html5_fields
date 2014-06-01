@@ -1,5 +1,6 @@
 require 'redmine'
 require 'html5_fields/projects_helper_patch'
+require 'html5_fields/field_format'
 
 Redmine::Plugin.register :redmine_html5_fields do
   name 'Redmine Html5 Fields plugin'

@@ -1,3 +1,7 @@
 # English strings go here for Rails i18n
 en:
   label_color: "Color"
+  activerecord:
+    errors:
+      messages:
+        not_a_color: "is not a color"

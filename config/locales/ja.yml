@@ -1,3 +1,7 @@
 # Japanese strings go here for Rails i18n
 ja:
   label_color: 色
+  activerecord:
+    errors:
+      messages:
+        not_a_color: "は色を入力してください。"

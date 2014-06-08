@@ -10,7 +10,7 @@ module HtmlFields
       end
 
       def validate_single_value(custom_field, value, customized=nil)
-        if value =~ /^[0-9a-f]{6}$/
+        if value =~ /^#[0-9a-f]{6}$/
           []
         else
           [::I18n.t('activerecord.errors.messages.not_a_color')]
@@ -18,11 +18,13 @@ module HtmlFields
       end
 
       def edit_tag(view, tag_id, tag_name, custom_value, options={})
-        view.text_field_tag(tag_name, custom_field.value, options.merge(:id => tag_id, :size => 10))
+        value = custom_value.value.blank? ? "#009900" : custom_value.value
+        view.text_field_tag(tag_name, value, options.merge(:id => tag_id, :size => 10, :type => "color"))
       end
 
       def bulk_edit_tag(view, tag_id, tag_name, custom_field, objects, value, options={})
-        view.text_field_tag(tag_name, value, options.merge(:id => tag_id, :size => 10))
+        value = value.blank? ? "#009900" : value
+        view.text_field_tag(tag_name, value || "#009900", options.merge(:id => tag_id, :size => 10, :type => "color"))
       end
 
       def query_filter_options(custom_field, query)

@@ -1,4 +1,4 @@
-module HtmlFields
+module Html5Fields
   module FieldFormat
     class RangeFormat < Redmine::FieldFormat::Numeric
       add 'range'

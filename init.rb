@@ -2,7 +2,8 @@ require 'redmine'
 # require 'html5_fields/projects_helper_patch'
 
 if Redmine::VERSION.to_s >= "2.5"
-  require 'html5_fields/field_format'
+  require 'html5_fields/range_format'
+  require 'html5_fields/color_format'
 else
   # FIXME: supports for Redmine 2.4 or lower
 end
